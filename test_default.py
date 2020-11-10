@@ -1,10 +1,14 @@
 import pytest
 import unittest
+import redis
 
 class TestStringMethods(unittest.TestCase):
 
     def test_upper(self):
         self.assertEqual('foo'.upper(), 'FOO')
+        r = redis.Redis(host='localhost', port=6379)
+        r.set('foo', 'bar')
+        self.asserEqual(r.get('foo'), 'bar')
 
     def test_isupper(self):
         self.assertTrue('FOO'.isupper())
