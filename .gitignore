@@ -1,0 +1,27 @@
+.DS_Store
+*~
+*.pyc
+*.idea
+*log*.txt
+/build/
+/dist/
+api/vendor
+api/standard
+**/*.json
+**/*.html
+!api/template/*
+/venv
+!statistics/template/stats.html
+yang.egg-info
+/parseAndPopulate/**/*.yang
+/parseAndPopulate/**/*.xml
+!/parseAndPopulate/template/compilationStatusTemplate.html
+!/parseAndPopulateTest/testJson/prepare.json
+# Ignore local versions
+yang-catalog.ini
+yang-catalog.service
+*/yang-catalog.ini
+*/yang-catalog.service
+/venv/
+/api/test.py
+/.vscode/
