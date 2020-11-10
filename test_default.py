@@ -8,7 +8,7 @@ class TestStringMethods(unittest.TestCase):
         self.assertEqual('foo'.upper(), 'FOO')
         r = redis.Redis(host='localhost', port=6379)
         r.set('foo', 'bar')
-        self.asserEqual(r.get('foo'), 'bar')
+        self.assertEqual(r.get('foo'), 'bar')
 
     def test_isupper(self):
         self.assertTrue('FOO'.isupper())
