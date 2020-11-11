@@ -1,6 +1,10 @@
 from flask import Flask
 import redis
+from my_blueprint import app as search_app
+
 app = Flask(__name__)
+app.register_blueprint(search_app)
+
 r = redis.Redis(host='localhost', port=6379)
 r.set('foo1', 'bar')
 
@@ -19,14 +23,6 @@ def test4():
 @app.route('/test')
 def test():
     return r.get('foo1').decode('utf-8')
-
-@app.route('/modules')
-def test_modules():
-    return r.get('modules-data').decode('utf-8')
-
-@app.route('/vendors')
-def test_vendors():
-    return r.get('vendors-data').decode('utf-8')
 
 @app.route('/')
 def hello_world():
