@@ -20,7 +20,14 @@ def test4():
 def test():
     return r.get('foo1').decode('utf-8')
 
+@app.route('/modules')
+def test_modules():
+    return r.get('modules-data').decode('utf-8')
+
+@app.route('/vendors')
+def test_vendors():
+    return r.get('vendors-data').decode('utf-8')
+
 @app.route('/')
 def hello_world():
     return 'Hello, World!'
-
